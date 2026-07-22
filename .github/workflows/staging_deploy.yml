@@ -116,5 +116,4 @@ jobs:
             docker compose run --rm migrate
             docker compose run --rm test
             docker compose up -d api
-            
             echo "Deployment completed successfully!"
