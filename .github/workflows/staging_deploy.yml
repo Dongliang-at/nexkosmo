@@ -104,8 +104,9 @@ jobs:
             set -e 
             
             echo "Changing to deploy directory."
-            sudo su && cd ${{ env.DEPLOY_PATH }}
-            
+            sudo su 
+            cd ${{ env.DEPLOY_PATH }}
+            echo `pwd`
             echo "Pulling latest code."
             git config --add safe.directory /opt/nexkosmo_staging
             git pull origin develop
