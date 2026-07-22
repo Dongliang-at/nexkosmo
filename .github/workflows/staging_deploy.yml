@@ -86,11 +86,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup SSH and deploy
-        uses: appleboy/ssh-action@v0.1.10
+        uses: appleboy/ssh-action@v1.2.5
         with:
           host: ${{ env.DEPLOY_HOST }}
           username: ${{ env.DEPLOY_USER }}
           key: ${{ secrets.SSH_DEPLOY_KEY }}
+          port: 22022
+          
           script: |
             set -e 
             
