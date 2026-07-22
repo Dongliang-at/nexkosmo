@@ -104,18 +104,17 @@ jobs:
             set -e 
             
             echo "Changing to deploy directory."
-            sudo su 
             cd ${{ env.DEPLOY_PATH }}
-            echo `pwd`
+      
             echo "Pulling latest code."
-            git config --add safe.directory /opt/nexkosmo_staging
-            git pull origin develop
-            python -m pip install --upgrade pip
-            pip install -r requirements.txt
-            docker compose down -v
-            docker compose up --build --no-cache
-            docker compose up -d postgres
-            docker compose run --rm migrate
-            docker compose run --rm test
-            docker compose up -d api
+            #git config --add safe.directory /opt/nexkosmo_staging
+            sudo git pull origin develop
+            sudo python -m pip install --upgrade pip
+            sudo pip install -r requirements.txt
+            sudo docker compose down -v
+            sudo docker compose up --build --no-cache
+            sudo docker compose up -d postgres
+            sudo docker compose run --rm migrate
+            sudo docker compose run --rm test
+            sudo docker compose up -d api
             echo "Deployment completed successfully!"
