@@ -4,6 +4,7 @@ on:
   push:
     branches: [develop]
 
+
 env:
   DEPLOY_HOST: '144.6.185.233' 
   DEPLOY_USER: 'nexkosmo'                
